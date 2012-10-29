@@ -73,6 +73,10 @@ class Update
   # Remote Update url: (nil if local)
   key :referral_url, String
 
+  # Original update if it is a reupdate 
+  belongs_to :original, :class => Update
+  key :original_id, ObjectId
+
   def to_indexed_json
     self.to_json
   end
